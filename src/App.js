@@ -62,10 +62,18 @@ function App() {
   return (
     <div className="App">
     <h1> IronContacts </h1>
-    <button onClick={ handleAddContact }> Add Random Contact </button>
-    <button onClick={ handleSortPopularity }> Sort by popularity </button>
-    <button onClick={ handleSortName }> Sort by name </button>
-    <table>
+    <button class="btn btn-primary" onClick={ handleAddContact }> Add Random Contact </button>
+      <br />
+      <br />
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button class="btn btn-outline-primary" onClick={ handleSortPopularity }> Sort by popularity </button>
+      <button class="btn btn-outline-primary" onClick={ handleSortName }> Sort by name </button>
+    </div>
+
+    <br />
+    <br />
+
+    <table class="table table-hover" >
       <thead>
         <tr>
           <th> Picture </th>
@@ -97,8 +105,9 @@ function App() {
                 { eachContact.wonEmmy  ? "🏆": "" }
               </td>
               <td>
-                <button onClick={ () => handleDeleteContact(contactList.indexOf(eachContact)) }> Delete </button>
+                <button class="btn btn-danger" onClick={ () => handleDeleteContact(contactList.indexOf(eachContact)) }> Delete </button>
               </td>
+              
             </tr>
           )
         })
